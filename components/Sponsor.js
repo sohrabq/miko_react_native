@@ -14,19 +14,23 @@ const imageHeight = Math.round((dimensions.width * 9) / 16);
 const imageWidth = dimensions.width;
 import dogs from '../assets/data/dogs';
 
-function Home() {
+function Home({navigation}) {
   useEffect(() => {
     console.log(dogs[0].image);
   });
   const sponsored = () =>
-    Alert.alert('Confirmation', 'Thank You!, You have made my day', [
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'cancel',
-      },
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
-    ]);
+    Alert.alert(
+      'Information',
+      'Thank You!, Please signup first for sponsoring me.',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => navigation.navigate('Signup')},
+      ],
+    );
   const renderDogItems = ({item}) => {
     return (
       <View style={styles.dogItemWrapper}>

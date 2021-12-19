@@ -1,31 +1,17 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {
   View,
   Text,
   Image,
   StyleSheet,
   Dimensions,
-  Alert,
   ImageBackground,
 } from 'react-native';
 const dimensions = Dimensions.get('window');
 const imageHeight = Math.round((dimensions.width * 9) / 16);
 const imageWidth = dimensions.width;
-import dogs from '../assets/data/dogs';
 
 function Home() {
-  useEffect(() => {
-    console.log(dogs[0].image);
-  });
-  const sponsored = () =>
-    Alert.alert('Confirmation', 'Thank You!, You have made my day', [
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'cancel',
-      },
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
-    ]);
   return (
     <View style={styles.container}>
       <View style={styles.headerWrapper}>
